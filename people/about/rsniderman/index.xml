@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rachel Sniderman | IDeA Lab @ UC Davis</title>
+    <link>https://davisidealab.github.io/people/about/rsniderman/</link>
+      <atom:link href="https://davisidealab.github.io/people/about/rsniderman/index.xml" rel="self" type="application/rss+xml" />
+    <description>Rachel Sniderman</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language>
+    <image>
+      <url>https://davisidealab.github.io/people/about/rsniderman/avatar_hu6a73ef01161cd2fef2a2d46ed460c04b_558001_270x270_fill_q75_lanczos_center.jpg</url>
+      <title>Rachel Sniderman</title>
+      <link>https://davisidealab.github.io/people/about/rsniderman/</link>
+    </image>
+    
+  </channel>
+</rss>

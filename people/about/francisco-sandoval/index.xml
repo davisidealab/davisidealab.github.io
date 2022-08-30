@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Francisco Sandoval | IDeA Lab @ UC Davis</title>
+    <link>https://davisidealab.github.io/people/about/francisco-sandoval/</link>
+      <atom:link href="https://davisidealab.github.io/people/about/francisco-sandoval/index.xml" rel="self" type="application/rss+xml" />
+    <description>Francisco Sandoval</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language>
+    <image>
+      <url>https://davisidealab.github.io/people/about/francisco-sandoval/avatar_hud968677a87c33f9aad437eaf4e2fc015_1509037_270x270_fill_lanczos_center_2.png</url>
+      <title>Francisco Sandoval</title>
+      <link>https://davisidealab.github.io/people/about/francisco-sandoval/</link>
+    </image>
+    
+  </channel>
+</rss>

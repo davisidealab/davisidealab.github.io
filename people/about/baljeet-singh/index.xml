@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Baljeet Singh | IDeA Lab @ UC Davis</title>
+    <link>https://davisidealab.github.io/people/about/baljeet-singh/</link>
+      <atom:link href="https://davisidealab.github.io/people/about/baljeet-singh/index.xml" rel="self" type="application/rss+xml" />
+    <description>Baljeet Singh</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language>
+    <image>
+      <url>https://davisidealab.github.io/people/about/baljeet-singh/avatar_hu85dd17a773711eaad6432e3ab0f729ac_55496_270x270_fill_q75_lanczos_center.jpg</url>
+      <title>Baljeet Singh</title>
+      <link>https://davisidealab.github.io/people/about/baljeet-singh/</link>
+    </image>
+    
+  </channel>
+</rss>

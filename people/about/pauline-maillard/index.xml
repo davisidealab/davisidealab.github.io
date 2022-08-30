@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pauline Maillard | IDeA Lab @ UC Davis</title>
+    <link>https://davisidealab.github.io/people/about/pauline-maillard/</link>
+      <atom:link href="https://davisidealab.github.io/people/about/pauline-maillard/index.xml" rel="self" type="application/rss+xml" />
+    <description>Pauline Maillard</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 11 Dec 2012 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://davisidealab.github.io/people/about/pauline-maillard/avatar_huca113329a72d44ed3e56463397b4651b_748917_270x270_fill_lanczos_center_2.png</url>
+      <title>Pauline Maillard</title>
+      <link>https://davisidealab.github.io/people/about/pauline-maillard/</link>
+    </image>
+    
+    <item>
+      <title>Effects of systolic blood pressure on white-matter integrity in young adults in the Framingham Heart Study: a cross-sectional study</title>
+      <link>https://davisidealab.github.io/publication/pm_2012-12-11/</link>
+      <pubDate>Tue, 11 Dec 2012 00:00:00 +0000</pubDate>
+      <guid>https://davisidealab.github.io/publication/pm_2012-12-11/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

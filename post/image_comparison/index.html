@@ -1,0 +1,1237 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.1.0 for Hugo" />
+  
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Evan Fletcher" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Comparing two images by constructing and utilizing a Confusion Matrix" />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://davisidealab.github.io/post/image_comparison/" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto+Mono&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto+Mono&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.4c5009fc355db3cd3753634e5125dbf8.css" />
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="https://davisidealab.github.io/post/image_comparison/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image" />
+  
+  <meta property="og:site_name" content="IDeA Lab @ UC Davis" />
+  <meta property="og:url" content="https://davisidealab.github.io/post/image_comparison/" />
+  <meta property="og:title" content="How to Compare Two Images | IDeA Lab @ UC Davis" />
+  <meta property="og:description" content="Comparing two images by constructing and utilizing a Confusion Matrix" /><meta property="og:image" content="https://davisidealab.github.io/post/image_comparison/featured.jpg" />
+    <meta property="twitter:image" content="https://davisidealab.github.io/post/image_comparison/featured.jpg" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2021-02-10T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2021-02-10T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://davisidealab.github.io/post/image_comparison/"
+  },
+  "headline": "How to Compare Two Images",
+  
+  "image": [
+    "https://davisidealab.github.io/post/image_comparison/featured.jpg"
+  ],
+  
+  "datePublished": "2021-02-10T00:00:00Z",
+  "dateModified": "2021-02-10T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Sean McDougall"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "IDeA Lab, UC Davis",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://davisidealab.github.io/media/logo_hubffc35ffdbaa41bbc0ff4aaae51619a3_31464_192x192_fit_lanczos_2.png"
+    }
+  },
+  "description": "Comparing two images by constructing and utilizing a Confusion Matrix"
+}
+</script>
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>How to Compare Two Images | IDeA Lab @ UC Davis</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="154528698de473e89f07d94218bdf0d2" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.f16be01fc8fb2b5885dd67ce942d1185.js"></script>
+
+  
+
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-end" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/people/"><span>People</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/project/"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/publication/"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/post/"><span>Post</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/contact/"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+
+      
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+<div class="article-container pt-3">
+  <h1>How to Compare Two Images</h1>
+
+  
+  <p class="page-subtitle">Comparing two images in a way that is efficient and robust can be surprisingly challenging. At the IDeA Lab we tackle this task everyday, read on to learn some quick tips and techniques.</p>
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span >
+      <a href="/people/about/sean-mcdougall/">Sean McDougall</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Feb 10, 2021
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    3 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/category/tutorial/">Tutorial</a></span>
+  
+
+</div>
+
+  
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 355px;">
+  <div style="position: relative">
+    <img src="/post/image_comparison/featured_hub38ee5c368b26db55528c4735269b44d_547017_720x0_resize_q75_lanczos.jpg" alt="" class="featured-image">
+    
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h2 id="outline">Outline</h2>
+<ol>
+<li>Background behind the task at hand.</li>
+<li>An introduction to Confusion Matrix&rsquo;s.</li>
+<li>Confusion Matrix&rsquo;s in action.</li>
+<li>Conclusion.</li>
+</ol>
+<h2 id="why-compare-two-images">Why Compare Two Images?</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-ground-truth-left-and-prediction-right-for-our-mri-segmentation-task">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" >
+        <img alt="Ground Truth (left) and Prediction (right) for our MRI segmentation task" srcset="
+               /post/image_comparison/sample_pred_hub64c0c1a652e1bd62811363e6eccf23b_24364_241f4b6351306654bf771e9aa65e5262.png 400w,
+               /post/image_comparison/sample_pred_hub64c0c1a652e1bd62811363e6eccf23b_24364_aa5330fcd71c080b34a8aacbd028a046.png 760w,
+               /post/image_comparison/sample_pred_hub64c0c1a652e1bd62811363e6eccf23b_24364_1200x1200_fit_lanczos_2.png 1200w"
+               src="/post/image_comparison/sample_pred_hub64c0c1a652e1bd62811363e6eccf23b_24364_241f4b6351306654bf771e9aa65e5262.png"
+               width="760"
+               height="279"
+               loading="lazy" data-zoomable /></div>
+  </div><figcaption>
+      Ground Truth (left) and Prediction (right) for our MRI segmentation task
+    </figcaption></figure>
+<p>At the IDeA Lab we utilize a convolutional neural network to create whole head segmentations of MRI images. These segmentations are then processed and analyzed to gather data that is sent to research labs across the United States. The quality of these segmentations must be constantly monitored because they are the base that all of our analysis builds on. The most robust and efficient way to calculate segmentation performance is by using a Confusion Matrix.</p>
+<h2 id="confusion-matrix">Confusion Matrix</h2>
+<p>A confusion matrix is used to easily read the amount of True Positive (TP), True Negative (TN), False Positive (FP) and False Negative (FN) predictions between a ground truth and prediction.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-a-confusion-matrix-is-a-2x2-grid">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" >
+        <img alt="A confusion matrix is a 2x2 grid" srcset="
+               /post/image_comparison/confusion_matrix_huc85c22a494bfda887d8e251c24f392f9_21963_065f88424f478d272dc061e884e16ae3.png 400w,
+               /post/image_comparison/confusion_matrix_huc85c22a494bfda887d8e251c24f392f9_21963_e2a9b5b52fa7bb5132e77e91cd65125b.png 760w,
+               /post/image_comparison/confusion_matrix_huc85c22a494bfda887d8e251c24f392f9_21963_1200x1200_fit_lanczos_2.png 1200w"
+               src="/post/image_comparison/confusion_matrix_huc85c22a494bfda887d8e251c24f392f9_21963_065f88424f478d272dc061e884e16ae3.png"
+               width="424"
+               height="326"
+               loading="lazy" data-zoomable /></div>
+  </div><figcaption>
+      A confusion matrix is a 2x2 grid
+    </figcaption></figure>
+<p>When comparing a ground truth segmentation and a prediction segmentation:</p>
+<ul>
+<li>True Positive: The amount of voxels that are <strong>CORRECTLY</strong> predicted as brain in the prediction when compared to the ground truth</li>
+<li>False Positive: The amount of voxels that are <strong>INCORRECTLY</strong> predicted as brain in the prediction when compared to the ground truth</li>
+<li>True Negative: The amount of voxels that are <strong>CORRECTLY</strong> predicted as <strong>NOT</strong> brain in the prediction when compared to the ground truth</li>
+<li>False Negative: The amount of voxels that are <strong>INCORRECTLY</strong> predicted as <strong>NOT</strong> brain in the prediction when compared to the ground truth</li>
+</ul>
+<p>Once the matrix is created these values are used in many formulas to judge overall segmentation performance.</p>
+<p><span style="color:red"><strong>Do not rely on one metric, calculate many metrics and judge performance on all of the scores.</strong></span></p>
+<h2 id="confusion-matrixs-in-action">Confusion Matrix&rsquo;s in Action</h2>
+<p>We are going to assume that you have your two images ready to be compared. Constructing a confusion matrix can take a while to run but is fairly easy to do in python.</p>
+<p>First we are going to be using the package sklearn and numpy.</p>
+<pre><code class="language-python">import sklearn
+import numpy as np
+</code></pre>
+<p>Before we construct the confusion matrix your images need to be thresholded and raveled.</p>
+<pre><code class="language-python"># pick a threshold that works best for your data, we typically use 0.34
+thresh = 0.34
+
+# threshold your data
+# taking the product of the img &gt; thresh and 1 binarizes the result
+img_1_thresh = (img_1 &gt; thresh) * 1
+img_2_thresh = (img_2 &gt; thresh) * 1
+
+# now ravelize your Images
+img_1_ravel = img_1_thresh.ravel()
+img_2_ravel = img_2_thresh.ravel()
+</code></pre>
+<p>Now that your images are ready, construct the confusion matrix using sklearn. Note this can take some time to run.</p>
+<pre><code class="language-python">c_mat = sklearn.metrics.confusion_matrix(img_1_ravel, img_2_ravel)
+</code></pre>
+<p>Once this has completed simply define your variables and you are ready to calculate your segmentation performance!</p>
+<pre><code class="language-python">tn, fp, fn, tp = c_mat.ravel()
+</code></pre>
+<p>Once your variables are defined use the table below to find which formula to use for your own case.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-this-table-is-taken-from-the-paper-metrics-for-evaluating-3d-medical-image-segmentation-analysis-selection-and-tool-i-highly-suggest-reading-this-paper-to-better-understand-this-topic">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" >
+        <img alt="This table is taken from the paper: Metrics for evaluating 3D medical image segmentation: analysis, selection, and tool. I highly suggest reading this paper to better understand this topic." srcset="
+               /post/image_comparison/table_of_formula_hu937401754c5be05bc47f5156719c0d6c_167211_c63132f04bbf17de9aa60ab0af587f95.png 400w,
+               /post/image_comparison/table_of_formula_hu937401754c5be05bc47f5156719c0d6c_167211_a09570e6687d833e0bcfb5e8d2ca7c08.png 760w,
+               /post/image_comparison/table_of_formula_hu937401754c5be05bc47f5156719c0d6c_167211_1200x1200_fit_lanczos_2.png 1200w"
+               src="/post/image_comparison/table_of_formula_hu937401754c5be05bc47f5156719c0d6c_167211_c63132f04bbf17de9aa60ab0af587f95.png"
+               width="760"
+               height="210"
+               loading="lazy" data-zoomable /></div>
+  </div><figcaption>
+      This table is taken from the paper: Metrics for evaluating 3D medical image segmentation: analysis, selection, and tool. I highly suggest reading this paper to better understand this topic.
+    </figcaption></figure></p>
+<h2 id="conclusion">Conclusion</h2>
+<p>It is important to use multiple metrics when judging performance, each metric has its own strengths and weaknesses. If you are still interested in Confusion Matrix&rsquo;s I highly suggest the paper Metrics for evaluating 3D medical image segmentation: analysis, selection, and tool. This paper goes much more in depth and should answer any questions you may have.</p>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://davisidealab.github.io/post/image_comparison/&amp;text=How%20to%20Compare%20Two%20Images" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://davisidealab.github.io/post/image_comparison/&amp;t=How%20to%20Compare%20Two%20Images" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=How%20to%20Compare%20Two%20Images&amp;body=https://davisidealab.github.io/post/image_comparison/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://davisidealab.github.io/post/image_comparison/&amp;title=How%20to%20Compare%20Two%20Images" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=How%20to%20Compare%20Two%20Images%20https://davisidealab.github.io/post/image_comparison/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://davisidealab.github.io/post/image_comparison/&amp;title=How%20to%20Compare%20Two%20Images" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+  
+  
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="/people/about/sean-mcdougall/"><img class="avatar mr-3 avatar-circle" src="/people/about/sean-mcdougall/avatar_huc9c449c472c251bd5b678930e402b2fa_460107_270x270_fill_q75_lanczos_center.jpg" alt="Sean McDougall"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="/people/about/sean-mcdougall/">Sean McDougall</a></h5>
+      <h6 class="card-subtitle">Staff Research Associate I</h6>
+      <p class="card-text">My research interest is cognitive neuroscience and illusory perception.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:smcdougall@ucdavis.edu" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/smcdouga" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="/en/js/wowchemy.min.f34c3a19502383149a3d95cd2ea80466.js"></script>
+
+    
+
+
+
+
+
+
+</body>
+</html>
