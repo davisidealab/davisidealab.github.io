@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Oliver Martinez | IDeA Lab @ UC Davis</title>
+    <link>https://davisidealab.github.io/people/about/oliver-martinez/</link>
+      <atom:link href="https://davisidealab.github.io/people/about/oliver-martinez/index.xml" rel="self" type="application/rss+xml" />
+    <description>Oliver Martinez</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language>
+    <image>
+      <url>https://davisidealab.github.io/people/about/oliver-martinez/avatar_hu0cf9b62f075579fff39494d6cbe8e26f_231248_270x270_fill_lanczos_center_2.png</url>
+      <title>Oliver Martinez</title>
+      <link>https://davisidealab.github.io/people/about/oliver-martinez/</link>
+    </image>
+    
+  </channel>
+</rss>

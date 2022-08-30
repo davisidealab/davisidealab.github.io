@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Evan Fletcher | IDeA Lab @ UC Davis</title>
+    <link>https://davisidealab.github.io/authors/emfletcher/</link>
+      <atom:link href="https://davisidealab.github.io/authors/emfletcher/index.xml" rel="self" type="application/rss+xml" />
+    <description>Evan Fletcher</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 21 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://davisidealab.github.io/authors/emfletcher/avatar_hu32e924645690923f8e08eaab571ea073_35578_270x270_fill_q75_lanczos_center.jpg</url>
+      <title>Evan Fletcher</title>
+      <link>https://davisidealab.github.io/authors/emfletcher/</link>
+    </image>
+    
+    <item>
+      <title>Convolutional Neural Net Learning Can Achieve Production-Level Brain Segmentation in Structural Magnetic Resonance Imaging</title>
+      <link>https://davisidealab.github.io/publication/ef_2021-06-21/</link>
+      <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://davisidealab.github.io/publication/ef_2021-06-21/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A robust brain signature region approach for episodic memory performance in older adults</title>
+      <link>https://davisidealab.github.io/publication/ef_2021-04-25/</link>
+      <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>https://davisidealab.github.io/publication/ef_2021-04-25/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A robust brain signature region approach for episodic memory performance in older adults</title>
+      <link>https://davisidealab.github.io/publication/ef_2021-04-25_response/</link>
+      <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>https://davisidealab.github.io/publication/ef_2021-04-25_response/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Brain Volume Change and Cognitive Trajectories in Aging</title>
+      <link>https://davisidealab.github.io/publication/ef_2018-03-01/</link>
+      <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
+      <guid>https://davisidealab.github.io/publication/ef_2018-03-01/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>White matter lesions impair frontal lobe function regardless of their location</title>
+      <link>https://davisidealab.github.io/publication/ev_2004-07-27/</link>
+      <pubDate>Tue, 27 Jul 2004 00:00:00 +0000</pubDate>
+      <guid>https://davisidealab.github.io/publication/ev_2004-07-27/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Staging of amyloid b, t-tau, regional atrophy rates, and cognitive change in a nondemented cohort: Results of serial mediation analyses</title>
+      <link>https://davisidealab.github.io/publication/ef_2018_382_393/</link>
+      <pubDate>Wed, 31 Dec 1969 16:33:38 -0800</pubDate>
+      <guid>https://davisidealab.github.io/publication/ef_2018_382_393/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors | IDeA Lab @ UC Davis</title>
+    <link>https://davisidealab.github.io/authors/</link>
+      <atom:link href="https://davisidealab.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
+    <description>Authors</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 21 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://davisidealab.github.io/media/logo_hubffc35ffdbaa41bbc0ff4aaae51619a3_31464_300x300_fit_lanczos_2.png</url>
+      <title>Authors</title>
+      <link>https://davisidealab.github.io/authors/</link>
+    </image>
+    
+  </channel>
+</rss>

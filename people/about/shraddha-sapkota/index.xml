@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shraddha Sapkota | IDeA Lab @ UC Davis</title>
+    <link>https://davisidealab.github.io/people/about/shraddha-sapkota/</link>
+      <atom:link href="https://davisidealab.github.io/people/about/shraddha-sapkota/index.xml" rel="self" type="application/rss+xml" />
+    <description>Shraddha Sapkota</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language>
+    <image>
+      <url>https://davisidealab.github.io/people/about/shraddha-sapkota/avatar_hu2c63620f0e5a03fb0f25d3ddc780f0ab_90486_270x270_fill_q75_lanczos_center.jpg</url>
+      <title>Shraddha Sapkota</title>
+      <link>https://davisidealab.github.io/people/about/shraddha-sapkota/</link>
+    </image>
+    
+  </channel>
+</rss>
