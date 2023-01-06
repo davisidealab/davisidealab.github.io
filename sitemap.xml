@@ -29,14 +29,17 @@
     <loc>https://davisidealab.github.io/documentation/example.2/</loc>
     <lastmod>2018-09-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davisidealab.github.io/talk/example-talk/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://davisidealab.github.io/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
+    <lastmod>2022-10-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davisidealab.github.io/event/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
+    <loc>https://davisidealab.github.io/positions/positions/</loc>
+    <lastmod>2022-10-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davisidealab.github.io/positions/</loc>
+    <lastmod>2022-10-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davisidealab.github.io/positions/opportunities/</loc>
+    <lastmod>2022-10-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davisidealab.github.io/publication-type/2/</loc>
     <lastmod>2021-06-21T00:00:00+00:00</lastmod>
@@ -83,12 +86,6 @@
     <loc>https://davisidealab.github.io/documentation/</loc>
     <lastmod>2019-05-05T00:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://davisidealab.github.io/slides/</loc>
-    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davisidealab.github.io/slides/example/</loc>
-    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://davisidealab.github.io/publication/ef_2018-03-01/</loc>
     <lastmod>2018-03-01T00:00:00+00:00</lastmod>
   </url><url>
@@ -101,13 +98,7 @@
     <loc>https://davisidealab.github.io/project/ag024904/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davisidealab.github.io/post/project1/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://davisidealab.github.io/project/ag021055/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davisidealab.github.io/tag/deep-learning/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davisidealab.github.io/project/ag050782/</loc>
@@ -155,9 +146,6 @@
     <loc>https://davisidealab.github.io/project/ag062689/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davisidealab.github.io/project/example/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://davisidealab.github.io/publication/pm_2012-12-11/</loc>
     <lastmod>2012-12-11T00:00:00+00:00</lastmod>
   </url><url>
@@ -174,8 +162,6 @@
   </url><url>
     <loc>https://davisidealab.github.io/people/</loc>
   </url><url>
-    <loc>https://davisidealab.github.io/volunteer/</loc>
-  </url><url>
     <loc>https://davisidealab.github.io/people/about/alexander-knaack/</loc>
   </url><url>
     <loc>https://davisidealab.github.io/people/about/baljeet-singh/</loc>
@@ -187,6 +173,8 @@
     <loc>https://davisidealab.github.io/people/about/oliver-martinez/</loc>
   </url><url>
     <loc>https://davisidealab.github.io/people/about/shraddha-sapkota/</loc>
+  </url><url>
+    <loc>https://davisidealab.github.io/people/about/stephane-sinclair/</loc>
   </url><url>
     <loc>https://davisidealab.github.io/people/about/trevor-hansen/</loc>
   </url>

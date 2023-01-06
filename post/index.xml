@@ -53,9 +53,9 @@
   &lt;/div&gt;&lt;figcaption&gt;
       Ground Truth (left) and Prediction (right) for our MRI segmentation task
     &lt;/figcaption&gt;&lt;/figure&gt;
-&lt;p&gt;At the IDeA Lab we utilize a convolutional neural network to create whole head segmentations of MRI images. These segmentations are then processed and analyzed to gather data that is sent to research labs across the United States. The quality of these segmentations must be constantly monitored because they are the base that all of our analysis builds on. The most robust and efficient way to calculate segmentation performance is by using a Confusion Matrix.&lt;/p&gt;
+&lt;p&gt;At the IDeA Lab, we utilize a convolutional neural network to create whole head segmentations of MRI images. These segmentations are then processed and analyzed to gather data that is sent to research labs across the United States. The quality of these segmentations must be constantly monitored because they are the foundation that all of our analysis builds on. The most robust and efficient way to calculate segmentation performance is by using a Confusion Matrix.&lt;/p&gt;
 &lt;h2 id=&#34;confusion-matrix&#34;&gt;Confusion Matrix&lt;/h2&gt;
-&lt;p&gt;A confusion matrix is used to easily read the amount of True Positive (TP), True Negative (TN), False Positive (FP) and False Negative (FN) predictions between a ground truth and prediction.&lt;/p&gt;
+&lt;p&gt;A confusion matrix is used to easily read the amount of True Positive (TP), True Negative (TN), False Positive (FP), and False Negative (FN) predictions between a ground truth and prediction.&lt;/p&gt;
 
 
 
@@ -91,10 +91,10 @@
 &lt;li&gt;True Negative: The amount of voxels that are &lt;strong&gt;CORRECTLY&lt;/strong&gt; predicted as &lt;strong&gt;NOT&lt;/strong&gt; brain in the prediction when compared to the ground truth&lt;/li&gt;
 &lt;li&gt;False Negative: The amount of voxels that are &lt;strong&gt;INCORRECTLY&lt;/strong&gt; predicted as &lt;strong&gt;NOT&lt;/strong&gt; brain in the prediction when compared to the ground truth&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Once the matrix is created these values are used in many formulas to judge overall segmentation performance.&lt;/p&gt;
+&lt;p&gt;Once the matrix is created, these values are used in many formulas to judge overall segmentation performance.&lt;/p&gt;
 &lt;p&gt;&lt;span style=&#34;color:red&#34;&gt;&lt;strong&gt;Do not rely on one metric, calculate many metrics and judge performance on all of the scores.&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;confusion-matrixs-in-action&#34;&gt;Confusion Matrix&amp;rsquo;s in Action&lt;/h2&gt;
-&lt;p&gt;We are going to assume that you have your two images ready to be compared. Constructing a confusion matrix can take a while to run but is fairly easy to do in python.&lt;/p&gt;
+&lt;p&gt;We are going to assume that you have your two images ready to be compared. Constructing a confusion matrix can take a while to run but is fairly easy to do in Python.&lt;/p&gt;
 &lt;p&gt;First we are going to be using the package sklearn and numpy.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import sklearn
 import numpy as np
@@ -112,13 +112,13 @@ img_2_thresh = (img_2 &amp;gt; thresh) * 1
 img_1_ravel = img_1_thresh.ravel()
 img_2_ravel = img_2_thresh.ravel()
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Now that your images are ready, construct the confusion matrix using sklearn. Note this can take some time to run.&lt;/p&gt;
+&lt;p&gt;Now that your images are ready, construct the confusion matrix using sklearn. Note that this can take some time to run.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;c_mat = sklearn.metrics.confusion_matrix(img_1_ravel, img_2_ravel)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Once this has completed simply define your variables and you are ready to calculate your segmentation performance!&lt;/p&gt;
+&lt;p&gt;Once this has completed, simply define your variables and you are ready to calculate your segmentation performance!&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;tn, fp, fn, tp = c_mat.ravel()
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Once your variables are defined use the table below to find which formula to use for your own case.
+&lt;p&gt;Once your variables are defined, use the table below to find which formula to use for your own case.
 
 
 
@@ -133,10 +133,10 @@ img_2_ravel = img_2_thresh.ravel()
 
 
 
-&lt;figure  id=&#34;figure-this-table-is-taken-from-the-paper-metrics-for-evaluating-3d-medical-image-segmentation-analysis-selection-and-tool-i-highly-suggest-reading-this-paper-to-better-understand-this-topic&#34;&gt;
+&lt;figure  id=&#34;figure-this-table-is-taken-from-the-paper-metrics-for-evaluating-3d-medical-image-segmentation-analysis-selection-and-tool-it-is-highly-suggested-to-read-this-paper-to-better-understand-this-topic&#34;&gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;
-        &lt;img alt=&#34;This table is taken from the paper: Metrics for evaluating 3D medical image segmentation: analysis, selection, and tool. I highly suggest reading this paper to better understand this topic.&#34; srcset=&#34;
+        &lt;img alt=&#34;This table is taken from the paper: Metrics for evaluating 3D medical image segmentation: analysis, selection, and tool. It is highly suggested to read this paper to better understand this topic.&#34; srcset=&#34;
                /post/image_comparison/table_of_formula_hu937401754c5be05bc47f5156719c0d6c_167211_c63132f04bbf17de9aa60ab0af587f95.png 400w,
                /post/image_comparison/table_of_formula_hu937401754c5be05bc47f5156719c0d6c_167211_a09570e6687d833e0bcfb5e8d2ca7c08.png 760w,
                /post/image_comparison/table_of_formula_hu937401754c5be05bc47f5156719c0d6c_167211_1200x1200_fit_lanczos_2.png 1200w&#34;
@@ -145,23 +145,10 @@ img_2_ravel = img_2_thresh.ravel()
                height=&#34;210&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;figcaption&gt;
-      This table is taken from the paper: Metrics for evaluating 3D medical image segmentation: analysis, selection, and tool. I highly suggest reading this paper to better understand this topic.
+      This table is taken from the paper: Metrics for evaluating 3D medical image segmentation: analysis, selection, and tool. It is highly suggested to read this paper to better understand this topic.
     &lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;It is important to use multiple metrics when judging performance, each metric has its own strengths and weaknesses. If you are still interested in Confusion Matrix&amp;rsquo;s I highly suggest the paper Metrics for evaluating 3D medical image segmentation: analysis, selection, and tool. This paper goes much more in depth and should answer any questions you may have.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Analyst POST</title>
-      <link>https://davisidealab.github.io/post/project1/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>https://davisidealab.github.io/post/project1/</guid>
-      <description>&lt;p&gt;BLAH BLAH BLAH sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
-&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
-&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
-&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
-&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+&lt;p&gt;It is important to use multiple metrics when judging performance, each metric has its own strengths and weaknesses. If you are still interested in Confusion Matrices, it is highly suggested to read the paper, &amp;ldquo;Metrics for Evaluating 3D Medical Image Segmentation: Analysis, Selection, and Tool&amp;rdquo;. The paper goes much more in depth and should answer any questions you may have.&lt;/p&gt;
 </description>
     </item>
     

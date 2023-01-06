@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Stephanie Sinclair | IDeA Lab @ UC Davis</title>
+    <link>https://davisidealab.github.io/people/about/stephane-sinclair/</link>
+      <atom:link href="https://davisidealab.github.io/people/about/stephane-sinclair/index.xml" rel="self" type="application/rss+xml" />
+    <description>Stephanie Sinclair</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language>
+    <image>
+      <url>https://davisidealab.github.io/people/about/stephane-sinclair/avatar_hu8ff0a6500e8d304ad295e59d20e66056_176337_270x270_fill_q75_lanczos_center.jpg</url>
+      <title>Stephanie Sinclair</title>
+      <link>https://davisidealab.github.io/people/about/stephane-sinclair/</link>
+    </image>
+    
+  </channel>
+</rss>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Positions | IDeA Lab @ UC Davis</title>
+    <link>https://davisidealab.github.io/positions/</link>
+      <atom:link href="https://davisidealab.github.io/positions/index.xml" rel="self" type="application/rss+xml" />
+    <description>Positions</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 24 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://davisidealab.github.io/media/logo_hubffc35ffdbaa41bbc0ff4aaae51619a3_31464_300x300_fit_lanczos_2.png</url>
+      <title>Positions</title>
+      <link>https://davisidealab.github.io/positions/</link>
+    </image>
+    
+    <item>
+      <title>Join the Lab</title>
+      <link>https://davisidealab.github.io/positions/positions/</link>
+      <pubDate>Mon, 24 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://davisidealab.github.io/positions/positions/</guid>
+      <description>&lt;h2 id=&#34;volunteer-opportunities&#34;&gt;Volunteer Opportunities&lt;/h2&gt;
+&lt;p&gt;Interested in research and what it takes to handle, process, and produce real neuroimaging data and reports? Look into our volunteer junior analyst position. If you have a background in programming but need experience handling real world tasks and problems our lab may be a fit for you. We guarantee a unique opportunity to gain real world experience in one of the top neuroimaging research labs in the world.&lt;/p&gt;
+&lt;h2 id=&#34;junior-software-engineer&#34;&gt;Junior Software Engineer&lt;/h2&gt;
+&lt;p&gt;Our lab utilizes a large repository of proprietary programs and software which constantly need updating to keep up with advances in the field of neuroimaging. If any of the tasks listed below interest you, please contact us!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Updating c-shell scripts to python 3&lt;/li&gt;
+&lt;li&gt;Add a graphical interface to our most used scripts&lt;/li&gt;
+&lt;li&gt;Document our full catalog of scripts, programs, and pipelines&lt;/li&gt;
+&lt;li&gt;Assist our Machine Learning Specialist and Program Specialist with day to day tasks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;junior-analyst&#34;&gt;Junior Analyst&lt;/h2&gt;
+&lt;p&gt;Our lab produces our own first-rate research, but also provides quality control and data extraction services to research programs across the United States. If any of the tasks listed below interest you, please contact us!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Develop basic terminal and linux based OS skills&lt;/li&gt;
+&lt;li&gt;Use our proprietary data cleaning and production pipeline&lt;/li&gt;
+&lt;li&gt;Produce Quality Controlled data for research studies across the United States&lt;/li&gt;
+&lt;li&gt;Get first hand experience developing, researching, and presenting a research question&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>PostDoctoral Job Position</title>
+      <link>https://davisidealab.github.io/positions/opportunities/</link>
+      <pubDate>Mon, 24 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://davisidealab.github.io/positions/opportunities/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

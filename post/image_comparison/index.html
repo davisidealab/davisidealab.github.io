@@ -563,6 +563,36 @@
         
 
         <li class="nav-item">
+          <a class="nav-link " href="/positions/"><span>Positions</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
           <a class="nav-link  active" href="/post/"><span>Post</span></a>
         </li>
 
@@ -608,6 +638,8 @@
     <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
 
       
+      
+        
       
         
       
@@ -692,7 +724,7 @@
   <h1>How to Compare Two Images</h1>
 
   
-  <p class="page-subtitle">Comparing two images in a way that is efficient and robust can be surprisingly challenging. At the IDeA Lab we tackle this task everyday, read on to learn some quick tips and techniques.</p>
+  <p class="page-subtitle">Comparing two images in a way that is efficient and robust can be surprisingly challenging. At the IDeA Lab, we tackle this task everyday. Continue reading to learn some quick tips and techniques.</p>
   
 
   
@@ -805,9 +837,9 @@
   </div><figcaption>
       Ground Truth (left) and Prediction (right) for our MRI segmentation task
     </figcaption></figure>
-<p>At the IDeA Lab we utilize a convolutional neural network to create whole head segmentations of MRI images. These segmentations are then processed and analyzed to gather data that is sent to research labs across the United States. The quality of these segmentations must be constantly monitored because they are the base that all of our analysis builds on. The most robust and efficient way to calculate segmentation performance is by using a Confusion Matrix.</p>
+<p>At the IDeA Lab, we utilize a convolutional neural network to create whole head segmentations of MRI images. These segmentations are then processed and analyzed to gather data that is sent to research labs across the United States. The quality of these segmentations must be constantly monitored because they are the foundation that all of our analysis builds on. The most robust and efficient way to calculate segmentation performance is by using a Confusion Matrix.</p>
 <h2 id="confusion-matrix">Confusion Matrix</h2>
-<p>A confusion matrix is used to easily read the amount of True Positive (TP), True Negative (TN), False Positive (FP) and False Negative (FN) predictions between a ground truth and prediction.</p>
+<p>A confusion matrix is used to easily read the amount of True Positive (TP), True Negative (TN), False Positive (FP), and False Negative (FN) predictions between a ground truth and prediction.</p>
 
 
 
@@ -843,10 +875,10 @@
 <li>True Negative: The amount of voxels that are <strong>CORRECTLY</strong> predicted as <strong>NOT</strong> brain in the prediction when compared to the ground truth</li>
 <li>False Negative: The amount of voxels that are <strong>INCORRECTLY</strong> predicted as <strong>NOT</strong> brain in the prediction when compared to the ground truth</li>
 </ul>
-<p>Once the matrix is created these values are used in many formulas to judge overall segmentation performance.</p>
+<p>Once the matrix is created, these values are used in many formulas to judge overall segmentation performance.</p>
 <p><span style="color:red"><strong>Do not rely on one metric, calculate many metrics and judge performance on all of the scores.</strong></span></p>
 <h2 id="confusion-matrixs-in-action">Confusion Matrix&rsquo;s in Action</h2>
-<p>We are going to assume that you have your two images ready to be compared. Constructing a confusion matrix can take a while to run but is fairly easy to do in python.</p>
+<p>We are going to assume that you have your two images ready to be compared. Constructing a confusion matrix can take a while to run but is fairly easy to do in Python.</p>
 <p>First we are going to be using the package sklearn and numpy.</p>
 <pre><code class="language-python">import sklearn
 import numpy as np
@@ -864,13 +896,13 @@ img_2_thresh = (img_2 &gt; thresh) * 1
 img_1_ravel = img_1_thresh.ravel()
 img_2_ravel = img_2_thresh.ravel()
 </code></pre>
-<p>Now that your images are ready, construct the confusion matrix using sklearn. Note this can take some time to run.</p>
+<p>Now that your images are ready, construct the confusion matrix using sklearn. Note that this can take some time to run.</p>
 <pre><code class="language-python">c_mat = sklearn.metrics.confusion_matrix(img_1_ravel, img_2_ravel)
 </code></pre>
-<p>Once this has completed simply define your variables and you are ready to calculate your segmentation performance!</p>
+<p>Once this has completed, simply define your variables and you are ready to calculate your segmentation performance!</p>
 <pre><code class="language-python">tn, fp, fn, tp = c_mat.ravel()
 </code></pre>
-<p>Once your variables are defined use the table below to find which formula to use for your own case.
+<p>Once your variables are defined, use the table below to find which formula to use for your own case.
 
 
 
@@ -885,10 +917,10 @@ img_2_ravel = img_2_thresh.ravel()
 
 
 
-<figure  id="figure-this-table-is-taken-from-the-paper-metrics-for-evaluating-3d-medical-image-segmentation-analysis-selection-and-tool-i-highly-suggest-reading-this-paper-to-better-understand-this-topic">
+<figure  id="figure-this-table-is-taken-from-the-paper-metrics-for-evaluating-3d-medical-image-segmentation-analysis-selection-and-tool-it-is-highly-suggested-to-read-this-paper-to-better-understand-this-topic">
   <div class="d-flex justify-content-center">
     <div class="w-100" >
-        <img alt="This table is taken from the paper: Metrics for evaluating 3D medical image segmentation: analysis, selection, and tool. I highly suggest reading this paper to better understand this topic." srcset="
+        <img alt="This table is taken from the paper: Metrics for evaluating 3D medical image segmentation: analysis, selection, and tool. It is highly suggested to read this paper to better understand this topic." srcset="
                /post/image_comparison/table_of_formula_hu937401754c5be05bc47f5156719c0d6c_167211_c63132f04bbf17de9aa60ab0af587f95.png 400w,
                /post/image_comparison/table_of_formula_hu937401754c5be05bc47f5156719c0d6c_167211_a09570e6687d833e0bcfb5e8d2ca7c08.png 760w,
                /post/image_comparison/table_of_formula_hu937401754c5be05bc47f5156719c0d6c_167211_1200x1200_fit_lanczos_2.png 1200w"
@@ -897,10 +929,10 @@ img_2_ravel = img_2_thresh.ravel()
                height="210"
                loading="lazy" data-zoomable /></div>
   </div><figcaption>
-      This table is taken from the paper: Metrics for evaluating 3D medical image segmentation: analysis, selection, and tool. I highly suggest reading this paper to better understand this topic.
+      This table is taken from the paper: Metrics for evaluating 3D medical image segmentation: analysis, selection, and tool. It is highly suggested to read this paper to better understand this topic.
     </figcaption></figure></p>
 <h2 id="conclusion">Conclusion</h2>
-<p>It is important to use multiple metrics when judging performance, each metric has its own strengths and weaknesses. If you are still interested in Confusion Matrix&rsquo;s I highly suggest the paper Metrics for evaluating 3D medical image segmentation: analysis, selection, and tool. This paper goes much more in depth and should answer any questions you may have.</p>
+<p>It is important to use multiple metrics when judging performance, each metric has its own strengths and weaknesses. If you are still interested in Confusion Matrices, it is highly suggested to read the paper, &ldquo;Metrics for Evaluating 3D Medical Image Segmentation: Analysis, Selection, and Tool&rdquo;. The paper goes much more in depth and should answer any questions you may have.</p>
 
     </div>
 
@@ -1021,7 +1053,7 @@ img_2_ravel = img_2_thresh.ravel()
   <div class="media author-card content-widget-hr">
     
       
-      <a href="/people/about/sean-mcdougall/"><img class="avatar mr-3 avatar-circle" src="/people/about/sean-mcdougall/avatar_huc9c449c472c251bd5b678930e402b2fa_460107_270x270_fill_q75_lanczos_center.jpg" alt="Sean McDougall"></a>
+      <a href="/people/about/sean-mcdougall/"><img class="avatar mr-3 avatar-circle" src="/people/about/sean-mcdougall/avatar_hu8ff0a6500e8d304ad295e59d20e66056_176337_270x270_fill_lanczos_center_2.png" alt="Sean McDougall"></a>
     
 
     <div class="media-body">
